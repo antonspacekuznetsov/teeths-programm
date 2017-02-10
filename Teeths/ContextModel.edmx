@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TeethsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TeethsModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="TeethsModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="nchar" MaxLength="250" />
+          <Property Name="Createdate" Type="date" />
+          <Property Name="Name" Type="nchar" MaxLength="250" />
+          <Property Name="Old" Type="nchar" MaxLength="250" />
+          <Property Name="Sex" Type="tinyint" />
+          <Property Name="Adress" Type="nchar" MaxLength="250" />
+          <Property Name="Proffesion" Type="nchar" MaxLength="250" />
+          <Property Name="FirstDiagnos" Type="nchar" MaxLength="250" />
+          <Property Name="DiseaseInfo" Type="nchar" MaxLength="250" />
+          <Property Name="DiseaseNow" Type="nchar" MaxLength="250" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeethsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TeethsEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="TeethsModel.Client" />
+        </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="Createdate" Type="DateTime" Precision="0" />
+          <Property Name="Name" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="Old" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="Sex" Type="Byte" />
+          <Property Name="Adress" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="Proffesion" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="FirstDiagnos" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="DiseaseInfo" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <Property Name="DiseaseNow" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeethsModelStoreContainer" CdmEntityContainer="TeethsEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="TeethsModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Old" ColumnName="Old" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Proffesion" ColumnName="Proffesion" />
+                <ScalarProperty Name="FirstDiagnos" ColumnName="FirstDiagnos" />
+                <ScalarProperty Name="DiseaseInfo" ColumnName="DiseaseInfo" />
+                <ScalarProperty Name="DiseaseNow" ColumnName="DiseaseNow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

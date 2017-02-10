@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Teeths.server;
+
 namespace Teeths
 {
     public partial class MainForm : Form
     {
+        Process _proc;
+
         public MainForm()
         {
             InitializeComponent();
+            _proc = new Process();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -35,6 +40,36 @@ namespace Teeths
 
         private void button1_Click(object sender, EventArgs e) //add New Client
         {
+            if (clientlist.Text == "Новый пациент")
+            {
+                Client _cl = new Client();
+                _cl.Name = name.Text;
+                _cl.Number = number.Text;
+                _cl.Createdate = createdate.Value;
+                _cl.Old = old.Text;
+                //_cl.Sex = sex.SelectedIndex;
+                _cl.Adress = adress.Text;
+                _cl.Proffesion = profesion.Text;
+                _cl.DiseaseInfo = diseaseInfo.Text;
+                _cl.DiseaseNow = diseaseNow.Text;
+                _cl.FirstDiagnos = firstdiagnos.Text;
+                _proc.AddNewClient(_cl);
+                this.ClearFields();
+                MessageBox.Show("Новый пациент добавлен!");
+                this.UpdateList();
+            }
+        }
+
+        private void ClearFields()
+        {
+            name.Text = "";
+            number.Text = "";
+            old.Text = "";
+            adress.Text = "";
+            profesion.Text = "";
+            diseaseInfo.Text = "";
+            diseaseNow.Text = "";
+            firstdiagnos.Text = "";
 
         }
 
@@ -46,6 +81,49 @@ namespace Teeths
         private void button3_Click(object sender, EventArgs e) //delete client
         {
 
+        }
+
+        private void clientlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (clientlist.Text == "Новый пациент")
+            {
+                button1.Enabled = true;
+                button2.Enabled = false;
+                button3.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = true;
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.UpdateList();
+        }
+
+        private void UpdateList()
+        {
+
+            List<ClientsListData> clients = new List<ClientsListData>();
+            _proc.update_clientList(ref clients);
+
+            clientlist.Items.Clear();
+            ComboboxItem ite = new ComboboxItem();
+            ite.Text = "Новый пациент";
+            ite.Value = -1;
+            clientlist.Items.Add(ite);
+            foreach (ClientsListData s in clients)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = s.Name;
+                item.Value = s.Id;
+                clientlist.Items.Add(item);
+                clientlist.SelectedIndex = 0;
+
+            }
         }
     }
 }

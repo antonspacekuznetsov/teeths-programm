@@ -9,7 +9,6 @@ c:\users\whocarrybalckhat\documents\visual studio 2012\Projects\Teeths\Teeths\ob
 c:\users\whocarrybalckhat\documents\visual studio 2012\Projects\Teeths\Teeths\obj\Debug\Teeths.MainForm.resources
 c:\users\whocarrybalckhat\documents\visual studio 2012\Projects\Teeths\Teeths\obj\Debug\Teeths.JawModel.resources
 c:\users\whocarrybalckhat\documents\visual studio 2012\Projects\Teeths\Teeths\obj\Debug\Teeths.TeethInfo.resources
-C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\Teeths\Teeths\bin\Debug\teeths.db
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\Teeths\Teeths\bin\Debug\EntityFramework.dll
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\Teeths\Teeths\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\Teeths\Teeths\bin\Debug\System.Data.SQLite.dll

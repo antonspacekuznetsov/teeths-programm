@@ -191,10 +191,13 @@
             // 
             this.clientlist.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clientlist.FormattingEnabled = true;
+            this.clientlist.Items.AddRange(new object[] {
+            "Новый пациент"});
             this.clientlist.Location = new System.Drawing.Point(143, 6);
             this.clientlist.Name = "clientlist";
             this.clientlist.Size = new System.Drawing.Size(671, 27);
             this.clientlist.TabIndex = 4;
+            this.clientlist.SelectedIndexChanged += new System.EventHandler(this.clientlist_SelectedIndexChanged);
             // 
             // sex
             // 
@@ -1112,6 +1115,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Медецинская карта";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
