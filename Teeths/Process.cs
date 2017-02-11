@@ -107,6 +107,31 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+
+        public void DeleteAllTeethInfo(int id)
+        {
+            try
+            {
+                using (IController<TeethInformation> sql = new Controller<TeethInformation>())
+                {
+                    foreach (TeethInformation tf in sql.GetAll())
+                    {
+                        if (tf.ClientId == id)
+                        {
+                            sql.Delete(tf.Id);
+                        }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+
+
+        }
     }
 
     class ProcessTeethInfo

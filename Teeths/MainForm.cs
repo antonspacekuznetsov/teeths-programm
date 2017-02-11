@@ -93,6 +93,7 @@ namespace Teeths
 
         private void button3_Click(object sender, EventArgs e) //delete client
         {
+            _proc.DeleteAllTeethInfo((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteClient((int)((clientlist.SelectedItem as ComboboxItem).Value));
             this.ClearFields();
             this.UpdateList();
