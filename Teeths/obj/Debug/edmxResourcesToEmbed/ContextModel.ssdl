@@ -2,6 +2,11 @@
 <Schema Namespace="TeethsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="TeethsModelStoreContainer">
     <EntitySet Name="Clients" EntityType="TeethsModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TeethInformation" EntityType="TeethsModel.Store.TeethInformation" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TeethInfo_Clients" Association="TeethsModel.Store.FK_TeethInfo_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="TeethInformation" EntitySet="TeethInformation" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Clients">
     <Key>
@@ -19,4 +24,25 @@
     <Property Name="DiseaseInfo" Type="nchar" MaxLength="250" />
     <Property Name="DiseaseNow" Type="nchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="TeethInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ClientId" Type="int" />
+    <Property Name="Teeth_number" Type="int" />
+    <Property Name="Info" Type="nchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_TeethInfo_Clients">
+    <End Role="Clients" Type="TeethsModel.Store.Clients" Multiplicity="0..1" />
+    <End Role="TeethInformation" Type="TeethsModel.Store.TeethInformation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeethInformation">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -14,6 +14,11 @@ namespace Teeths
     
     public partial class Client
     {
+        public Client()
+        {
+            this.TeethInformations = new HashSet<TeethInformation>();
+        }
+    
         public int Id { get; set; }
         public string Number { get; set; }
         public Nullable<System.DateTime> Createdate { get; set; }
@@ -25,5 +30,7 @@ namespace Teeths
         public string FirstDiagnos { get; set; }
         public string DiseaseInfo { get; set; }
         public string DiseaseNow { get; set; }
+    
+        public virtual ICollection<TeethInformation> TeethInformations { get; set; }
     }
 }

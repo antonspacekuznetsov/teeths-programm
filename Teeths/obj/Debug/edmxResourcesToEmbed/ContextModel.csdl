@@ -2,6 +2,11 @@
 <Schema Namespace="TeethsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="TeethsEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="Clients" EntityType="TeethsModel.Client" />
+    <EntitySet Name="TeethInformations" EntityType="TeethsModel.TeethInformation" />
+    <AssociationSet Name="FK_TeethInfo_Clients" Association="TeethsModel.FK_TeethInfo_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="TeethInformation" EntitySet="TeethInformations" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Client">
     <Key>
@@ -18,5 +23,28 @@
     <Property Name="FirstDiagnos" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
     <Property Name="DiseaseInfo" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
     <Property Name="DiseaseNow" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="TeethInformations" Relationship="TeethsModel.FK_TeethInfo_Clients" FromRole="Clients" ToRole="TeethInformation" />
   </EntityType>
+  <EntityType Name="TeethInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientId" Type="Int32" />
+    <Property Name="Teeth_number" Type="Int32" />
+    <Property Name="Info" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Client" Relationship="TeethsModel.FK_TeethInfo_Clients" FromRole="TeethInformation" ToRole="Clients" />
+  </EntityType>
+  <Association Name="FK_TeethInfo_Clients">
+    <End Role="Clients" Type="TeethsModel.Client" Multiplicity="0..1" />
+    <End Role="TeethInformation" Type="TeethsModel.TeethInformation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeethInformation">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

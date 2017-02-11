@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\Teeths\Teeths\ContextModel.edmx'. 
+﻿// Default code generation is disabled for model 'C:\Users\Anton\Documents\Visual Studio 2012\Projects\Teeths\teeths-programm\Teeths\ContextModel.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.
