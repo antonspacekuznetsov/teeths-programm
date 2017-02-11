@@ -107,6 +107,7 @@ namespace Teeths
                 button2.Enabled = false;
                 button3.Enabled = false;
                 linkLabel53.Enabled = false;
+                this.ClearFields();
             }
             else
             {
@@ -118,16 +119,16 @@ namespace Teeths
                 Client _cl = new Client();
                 _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
 
-                name.Text = _cl.Name;
-                number.Text = _cl.Number;
+                name.Text = _cl.Name.TrimEnd();
+                number.Text = _cl.Number.TrimEnd();
                 createdate.Value = (DateTime)_cl.Createdate;
-                old.Text = _cl.Old;
+                old.Text = _cl.Old.TrimEnd();
                 //_cl.Sex = sex.SelectedIndex;
-                adress.Text = _cl.Adress;
-                profesion.Text = _cl.Proffesion;
-                diseaseInfo.Text = _cl.DiseaseInfo;
-                diseaseNow.Text = _cl.DiseaseNow;
-                firstdiagnos.Text = _cl.FirstDiagnos;
+                adress.Text = _cl.Adress.TrimEnd();
+                profesion.Text = _cl.Proffesion.TrimEnd();
+                diseaseInfo.Text = _cl.DiseaseInfo.TrimEnd();
+                diseaseNow.Text = _cl.DiseaseNow.TrimEnd();
+                firstdiagnos.Text = _cl.FirstDiagnos.TrimEnd();
             }
         }
 
@@ -150,7 +151,7 @@ namespace Teeths
             foreach (ClientsListData s in clients)
             {
                 ComboboxItem item = new ComboboxItem();
-                item.Text = s.Name;
+                item.Text = s.Name.TrimEnd();
                 item.Value = s.Id;
                 clientlist.Items.Add(item);
                 clientlist.SelectedIndex = 0;

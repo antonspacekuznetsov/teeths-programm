@@ -111,7 +111,70 @@ namespace Teeths
 
     class ProcessTeethInfo
     {
+        public ProcessTeethInfo()
+        {
 
+        }
+
+        public void SaveTeethInfo(TeethInformation _tf)
+        {
+            try
+            {
+                using (IController<TeethInformation> sql = new Controller<TeethInformation>())
+                {
+                    bool priznak = false;
+
+                    foreach (TeethInformation tf in sql.GetAll())
+                    {
+                        if (tf.ClientId == _tf.ClientId && tf.Teeth_number == _tf.Teeth_number)
+                        {
+                            tf.Info = _tf.Info;
+                            sql.Update(tf);
+                            priznak = true;
+                            break;
+                        }
+                    }
+
+                    if (!priznak)
+                    {
+                        sql.Create(_tf);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public string LoadInformation(TeethInformation _tf)
+        {
+            string result = string.Empty;
+            try
+            {
+                using (IController<TeethInformation> sql = new Controller<TeethInformation>())
+                {
+                    foreach (TeethInformation tf in sql.GetAll())
+                    {
+                        if (tf.ClientId == _tf.ClientId && tf.Teeth_number == _tf.Teeth_number)
+                        {
+                            result = tf.Info;
+                            break;
+                        }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+
+            return result.TrimEnd();
+
+        }
 
     }
 }
