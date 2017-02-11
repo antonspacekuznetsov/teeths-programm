@@ -75,6 +75,19 @@ namespace Teeths
 
         private void button2_Click(object sender, EventArgs e) //change Client
         {
+            Client _cl = new Client();
+            _cl.Name = name.Text;
+            _cl.Number = number.Text;
+            _cl.Createdate = createdate.Value;
+            _cl.Old = old.Text;
+            //_cl.Sex = sex.SelectedIndex;
+            _cl.Adress = adress.Text;
+            _cl.Proffesion = profesion.Text;
+            _cl.DiseaseInfo = diseaseInfo.Text;
+            _cl.DiseaseNow = diseaseNow.Text;
+            _cl.FirstDiagnos = firstdiagnos.Text;
+            _proc.UpdateclientInfo(_cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
+            MessageBox.Show("Данные пациента изменены!");
 
         }
 

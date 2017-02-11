@@ -61,5 +61,35 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+
+        public void UpdateclientInfo(Client _cl, int id)
+        {
+            try
+            {
+                using (IController<Client> sql = new Controller<Client>())
+                {
+                   Client  cl = sql.GetById(id);
+
+                   cl.Name = _cl.Name;
+                   cl.Number = _cl.Number;
+                   cl.Createdate = _cl.Createdate;
+                   cl.Old = _cl.Old;
+                   //_cl.Sex = sex.SelectedIndex;
+                   cl.Adress = _cl.Adress;
+                   cl.Proffesion = _cl.Proffesion;
+                   cl.DiseaseInfo = _cl.DiseaseInfo;
+                   cl.DiseaseNow = _cl.DiseaseNow;
+                   cl.FirstDiagnos = _cl.FirstDiagnos;
+                        sql.Update(cl);
+
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+
+        }
     }
 }
