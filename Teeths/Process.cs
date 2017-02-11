@@ -80,7 +80,7 @@ namespace Teeths
                    cl.DiseaseInfo = _cl.DiseaseInfo;
                    cl.DiseaseNow = _cl.DiseaseNow;
                    cl.FirstDiagnos = _cl.FirstDiagnos;
-                        sql.Update(cl);
+                   sql.Update(cl);
 
                     
                 }
@@ -90,6 +90,22 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
 
+        }
+
+        public void DeleteClient(int id)
+        {
+            try
+            {
+                using (IController<Client> sql = new Controller<Client>())
+                {
+                    sql.Delete(id);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
         }
     }
 }
