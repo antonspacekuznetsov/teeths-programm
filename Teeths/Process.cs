@@ -45,5 +45,21 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+
+        public void getClientData(ref Client _cl, int id)
+        {
+            try
+            {
+                using (IController<Client> sql = new Controller<Client>())
+                {
+                    _cl = sql.GetById(id);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
     }
 }

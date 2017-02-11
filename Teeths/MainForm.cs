@@ -96,6 +96,20 @@ namespace Teeths
                 button1.Enabled = false;
                 button2.Enabled = true;
                 button3.Enabled = true;
+
+                Client _cl = new Client();
+                _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
+
+                name.Text = _cl.Name;
+                number.Text = _cl.Number;
+                createdate.Value = (DateTime)_cl.Createdate;
+                old.Text = _cl.Old;
+                //_cl.Sex = sex.SelectedIndex;
+                adress.Text = _cl.Adress;
+                profesion.Text = _cl.Proffesion;
+                diseaseInfo.Text = _cl.DiseaseInfo;
+                diseaseNow.Text = _cl.DiseaseNow;
+                firstdiagnos.Text = _cl.FirstDiagnos;
             }
         }
 
