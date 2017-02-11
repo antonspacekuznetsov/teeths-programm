@@ -14,12 +14,12 @@ namespace Teeths
 {
     public partial class MainForm : Form
     {
-        Process _proc;
+        ProcessClient _proc;
 
         public MainForm()
         {
             InitializeComponent();
-            _proc = new Process();
+            _proc = new ProcessClient();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Teeths
 
         private void linkLabel53_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) //show teeth's model
         {
-            Form form2 = new JawModel();
+            Form form2 = new JawModel((int)((clientlist.SelectedItem as ComboboxItem).Value));
             form2.ShowDialog();
         }
 
@@ -106,12 +106,14 @@ namespace Teeths
                 button1.Enabled = true;
                 button2.Enabled = false;
                 button3.Enabled = false;
+                linkLabel53.Enabled = false;
             }
             else
             {
                 button1.Enabled = false;
                 button2.Enabled = true;
                 button3.Enabled = true;
+                linkLabel53.Enabled = true;
 
                 Client _cl = new Client();
                 _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));

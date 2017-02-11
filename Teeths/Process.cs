@@ -11,11 +11,11 @@ using Teeths.server;
 namespace Teeths
 {
 
-    class Process
+    class ProcessClient
     {
 
 
-        public Process()
+        public ProcessClient()
         {
 
 
@@ -107,5 +107,11 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+    }
+
+    class ProcessTeethInfo
+    {
+
+
     }
 }

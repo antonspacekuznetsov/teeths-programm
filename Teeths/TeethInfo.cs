@@ -12,9 +12,10 @@ namespace Teeths
 {
     public partial class TeethInfo : Form
     {
-        public TeethInfo()
+        public TeethInfo(string number, int id)
         {
             InitializeComponent();
+            textBox1.Text = number;
         }
     }
 }
