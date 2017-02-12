@@ -7,7 +7,17 @@
       <Schema Namespace="TeethsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="TeethsModelStoreContainer">
           <EntitySet Name="Clients" EntityType="TeethsModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataView" EntityType="TeethsModel.Store.DataView" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Everyteeth" EntityType="TeethsModel.Store.Everyteeth" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TeethInformation" EntityType="TeethsModel.Store.TeethInformation" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DataView_Clients" Association="TeethsModel.Store.FK_DataView_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="DataView" EntitySet="DataView" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Everyteeth_Clients" Association="TeethsModel.Store.FK_Everyteeth_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Everyteeth" EntitySet="Everyteeth" />
+          </AssociationSet>
           <AssociationSet Name="FK_TeethInfo_Clients" Association="TeethsModel.Store.FK_TeethInfo_Clients">
             <End Role="Clients" EntitySet="Clients" />
             <End Role="TeethInformation" EntitySet="TeethInformation" />
@@ -29,6 +39,39 @@
           <Property Name="DiseaseInfo" Type="nchar" MaxLength="250" />
           <Property Name="DiseaseNow" Type="nchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="DataView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="DataOuterView" Type="nchar" MaxLength="1000" />
+          <Property Name="Descriptionbite" Type="nchar" MaxLength="1000" />
+          <Property Name="Descriptionmucous" Type="nchar" MaxLength="1000" />
+          <Property Name="DataXray" Type="nchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Everyteeth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="ViewData" Type="nchar" MaxLength="1000" />
+          <Property Name="Teeth_number" Type="nchar" MaxLength="10" />
+          <Property Name="O" Type="tinyint" />
+          <Property Name="R" Type="tinyint" />
+          <Property Name="C" Type="tinyint" />
+          <Property Name="P" Type="tinyint" />
+          <Property Name="Pt" Type="tinyint" />
+          <Property Name="Pi" Type="tinyint" />
+          <Property Name="A" Type="tinyint" />
+          <Property Name="Movement" Type="nchar" MaxLength="10" />
+          <Property Name="K" Type="tinyint" />
+          <Property Name="I" Type="tinyint" />
+          <Property Name="X" Type="nchar" MaxLength="10" />
+          <Property Name="Y" Type="nchar" MaxLength="10" />
+          <Property Name="Z" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="TeethInformation">
           <Key>
             <PropertyRef Name="Id" />
@@ -38,6 +81,30 @@
           <Property Name="Teeth_number" Type="int" />
           <Property Name="Info" Type="nchar" MaxLength="250" />
         </EntityType>
+        <Association Name="FK_DataView_Clients">
+          <End Role="Clients" Type="TeethsModel.Store.Clients" Multiplicity="1" />
+          <End Role="DataView" Type="TeethsModel.Store.DataView" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DataView">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Everyteeth_Clients">
+          <End Role="Clients" Type="TeethsModel.Store.Clients" Multiplicity="1" />
+          <End Role="Everyteeth" Type="TeethsModel.Store.Everyteeth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Everyteeth">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TeethInfo_Clients">
           <End Role="Clients" Type="TeethsModel.Store.Clients" Multiplicity="0..1" />
           <End Role="TeethInformation" Type="TeethsModel.Store.TeethInformation" Multiplicity="*" />
@@ -57,7 +124,17 @@
       <Schema Namespace="TeethsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TeethsEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Clients" EntityType="TeethsModel.Client" />
+          <EntitySet Name="DataViews" EntityType="TeethsModel.DataView" />
+          <EntitySet Name="Everyteeth" EntityType="TeethsModel.Everytooth" />
           <EntitySet Name="TeethInformations" EntityType="TeethsModel.TeethInformation" />
+          <AssociationSet Name="FK_DataView_Clients" Association="TeethsModel.FK_DataView_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="DataView" EntitySet="DataViews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Everyteeth_Clients" Association="TeethsModel.FK_Everyteeth_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Everyteeth" EntitySet="Everyteeth" />
+          </AssociationSet>
           <AssociationSet Name="FK_TeethInfo_Clients" Association="TeethsModel.FK_TeethInfo_Clients">
             <End Role="Clients" EntitySet="Clients" />
             <End Role="TeethInformation" EntitySet="TeethInformations" />
@@ -78,7 +155,44 @@
           <Property Name="FirstDiagnos" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
           <Property Name="DiseaseInfo" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
           <Property Name="DiseaseNow" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="DataViews" Relationship="TeethsModel.FK_DataView_Clients" FromRole="Clients" ToRole="DataView" />
+          <NavigationProperty Name="Everyteeth" Relationship="TeethsModel.FK_Everyteeth_Clients" FromRole="Clients" ToRole="Everyteeth" />
           <NavigationProperty Name="TeethInformations" Relationship="TeethsModel.FK_TeethInfo_Clients" FromRole="Clients" ToRole="TeethInformation" />
+        </EntityType>
+        <EntityType Name="DataView">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="DataOuterView" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <Property Name="Descriptionbite" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <Property Name="Descriptionmucous" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <Property Name="DataXray" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Client" Relationship="TeethsModel.FK_DataView_Clients" FromRole="DataView" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Everytooth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="ViewData" Type="String" MaxLength="1000" Unicode="true" FixedLength="true" />
+          <Property Name="Teeth_number" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="O" Type="Byte" />
+          <Property Name="R" Type="Byte" />
+          <Property Name="C" Type="Byte" />
+          <Property Name="P" Type="Byte" />
+          <Property Name="Pt" Type="Byte" />
+          <Property Name="Pi" Type="Byte" />
+          <Property Name="A" Type="Byte" />
+          <Property Name="Movement" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="K" Type="Byte" />
+          <Property Name="I" Type="Byte" />
+          <Property Name="X" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Y" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Z" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Client" Relationship="TeethsModel.FK_Everyteeth_Clients" FromRole="Everyteeth" ToRole="Clients" />
         </EntityType>
         <EntityType Name="TeethInformation">
           <Key>
@@ -90,6 +204,30 @@
           <Property Name="Info" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="Client" Relationship="TeethsModel.FK_TeethInfo_Clients" FromRole="TeethInformation" ToRole="Clients" />
         </EntityType>
+        <Association Name="FK_DataView_Clients">
+          <End Role="Clients" Type="TeethsModel.Client" Multiplicity="1" />
+          <End Role="DataView" Type="TeethsModel.DataView" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DataView">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Everyteeth_Clients">
+          <End Role="Clients" Type="TeethsModel.Client" Multiplicity="1" />
+          <End Role="Everyteeth" Type="TeethsModel.Everytooth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Everyteeth">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TeethInfo_Clients">
           <End Role="Clients" Type="TeethsModel.Client" Multiplicity="0..1" />
           <End Role="TeethInformation" Type="TeethsModel.TeethInformation" Multiplicity="*" />
@@ -122,6 +260,41 @@
                 <ScalarProperty Name="FirstDiagnos" ColumnName="FirstDiagnos" />
                 <ScalarProperty Name="DiseaseInfo" ColumnName="DiseaseInfo" />
                 <ScalarProperty Name="DiseaseNow" ColumnName="DiseaseNow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataViews">
+            <EntityTypeMapping TypeName="TeethsModel.DataView">
+              <MappingFragment StoreEntitySet="DataView">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="DataOuterView" ColumnName="DataOuterView" />
+                <ScalarProperty Name="Descriptionbite" ColumnName="Descriptionbite" />
+                <ScalarProperty Name="Descriptionmucous" ColumnName="Descriptionmucous" />
+                <ScalarProperty Name="DataXray" ColumnName="DataXray" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Everyteeth">
+            <EntityTypeMapping TypeName="TeethsModel.Everytooth">
+              <MappingFragment StoreEntitySet="Everyteeth">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="ViewData" ColumnName="ViewData" />
+                <ScalarProperty Name="Teeth_number" ColumnName="Teeth_number" />
+                <ScalarProperty Name="O" ColumnName="O" />
+                <ScalarProperty Name="R" ColumnName="R" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="P" ColumnName="P" />
+                <ScalarProperty Name="Pt" ColumnName="Pt" />
+                <ScalarProperty Name="Pi" ColumnName="Pi" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="Movement" ColumnName="Movement" />
+                <ScalarProperty Name="K" ColumnName="K" />
+                <ScalarProperty Name="I" ColumnName="I" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

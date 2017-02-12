@@ -26,6 +26,8 @@ namespace Teeths
         }
     
         public DbSet<Client> Clients { get; set; }
+        public DbSet<DataView> DataViews { get; set; }
+        public DbSet<Everytooth> Everyteeth { get; set; }
         public DbSet<TeethInformation> TeethInformations { get; set; }
     }
 }

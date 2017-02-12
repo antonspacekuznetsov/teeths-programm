@@ -93,9 +93,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContextModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataView.cs">
+      <DependentUpon>ContextModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Everytooth.cs">
+      <DependentUpon>ContextModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="JawModel.cs">
       <SubType>Form</SubType>
     </Compile>

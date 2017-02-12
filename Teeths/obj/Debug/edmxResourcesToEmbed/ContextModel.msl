@@ -18,6 +18,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DataViews">
+      <EntityTypeMapping TypeName="TeethsModel.DataView">
+        <MappingFragment StoreEntitySet="DataView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="DataOuterView" ColumnName="DataOuterView" />
+          <ScalarProperty Name="Descriptionbite" ColumnName="Descriptionbite" />
+          <ScalarProperty Name="Descriptionmucous" ColumnName="Descriptionmucous" />
+          <ScalarProperty Name="DataXray" ColumnName="DataXray" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Everyteeth">
+      <EntityTypeMapping TypeName="TeethsModel.Everytooth">
+        <MappingFragment StoreEntitySet="Everyteeth">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ViewData" ColumnName="ViewData" />
+          <ScalarProperty Name="Teeth_number" ColumnName="Teeth_number" />
+          <ScalarProperty Name="O" ColumnName="O" />
+          <ScalarProperty Name="R" ColumnName="R" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="P" ColumnName="P" />
+          <ScalarProperty Name="Pt" ColumnName="Pt" />
+          <ScalarProperty Name="Pi" ColumnName="Pi" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="Movement" ColumnName="Movement" />
+          <ScalarProperty Name="K" ColumnName="K" />
+          <ScalarProperty Name="I" ColumnName="I" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TeethInformations">
       <EntityTypeMapping TypeName="TeethsModel.TeethInformation">
         <MappingFragment StoreEntitySet="TeethInformation">

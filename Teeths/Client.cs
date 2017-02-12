@@ -16,6 +16,8 @@ namespace Teeths
     {
         public Client()
         {
+            this.DataViews = new HashSet<DataView>();
+            this.Everyteeth = new HashSet<Everytooth>();
             this.TeethInformations = new HashSet<TeethInformation>();
         }
     
@@ -31,6 +33,8 @@ namespace Teeths
         public string DiseaseInfo { get; set; }
         public string DiseaseNow { get; set; }
     
+        public virtual ICollection<DataView> DataViews { get; set; }
+        public virtual ICollection<Everytooth> Everyteeth { get; set; }
         public virtual ICollection<TeethInformation> TeethInformations { get; set; }
     }
 }

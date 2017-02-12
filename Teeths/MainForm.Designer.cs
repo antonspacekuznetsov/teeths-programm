@@ -112,24 +112,24 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.Teeth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.O = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.R = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -138,7 +138,7 @@
             this.Pt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Pl = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Movement = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Movement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.K = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.I = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,9 +149,9 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1144,30 +1144,6 @@
             this.tabPage3.Text = "Данные объективного исследования";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Teeth,
-            this.O,
-            this.R,
-            this.C,
-            this.P,
-            this.Pt,
-            this.Pl,
-            this.A,
-            this.Movement,
-            this.K,
-            this.I,
-            this.X,
-            this.Y,
-            this.Z});
-            this.dataGridView1.Location = new System.Drawing.Point(2, 174);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(829, 359);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
@@ -1194,6 +1170,79 @@
             this.tabPage4.Text = "Для каждого зуба";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(590, 549);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(111, 32);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Удалить строку";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(707, 549);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(111, 32);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Сохранить";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(6, 152);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(180, 19);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Таблица состояния зубов";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(6, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(212, 19);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Данные осмотра полости рта ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(6, 39);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(825, 101);
+            this.textBox1.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Teeth,
+            this.O,
+            this.R,
+            this.C,
+            this.P,
+            this.Pt,
+            this.Pl,
+            this.A,
+            this.Movement,
+            this.K,
+            this.I,
+            this.X,
+            this.Y,
+            this.Z});
+            this.dataGridView1.Location = new System.Drawing.Point(2, 174);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(829, 359);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.button5);
@@ -1213,94 +1262,24 @@
             this.tabPage5.Text = "Общая информация";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button5
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(6, 39);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(825, 101);
-            this.textBox1.TabIndex = 3;
+            this.button5.Location = new System.Drawing.Point(707, 549);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(111, 32);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Сохранить";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // label17
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(6, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(212, 19);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Данные осмотра полости рта ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(6, 152);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 19);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Таблица состояния зубов";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(707, 549);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 32);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Сохранить";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(3, 5);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(191, 19);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Данные внешнего осмотра";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(3, 27);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(825, 61);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(3, 114);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(825, 61);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(3, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(136, 19);
-            this.label15.TabIndex = 6;
-            this.label15.Text = "Описание прикуса";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(3, 208);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(825, 61);
-            this.textBox4.TabIndex = 5;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(3, 279);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(379, 19);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Данные рентгеновских и лабораторных исследований";
             // 
             // label16
             // 
@@ -1313,6 +1292,26 @@
             this.label16.Text = "Описание состояния слизистой оболочки полости рта, десен, альвеолярных отростков " +
     "и неба";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(3, 92);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(136, 19);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Описание прикуса";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(191, 19);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Данные внешнего осмотра";
+            // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1323,34 +1322,35 @@
             this.textBox5.Size = new System.Drawing.Size(825, 61);
             this.textBox5.TabIndex = 5;
             // 
-            // label17
+            // textBox4
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(3, 279);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(379, 19);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Данные рентгеновских и лабораторных исследований";
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(3, 208);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox4.Size = new System.Drawing.Size(825, 61);
+            this.textBox4.TabIndex = 5;
             // 
-            // button5
+            // textBox3
             // 
-            this.button5.Location = new System.Drawing.Point(707, 549);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 32);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Сохранить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(3, 114);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox3.Size = new System.Drawing.Size(825, 61);
+            this.textBox3.TabIndex = 5;
             // 
-            // button6
+            // textBox2
             // 
-            this.button6.Location = new System.Drawing.Point(590, 549);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 32);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Удалить строку";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(3, 27);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(825, 61);
+            this.textBox2.TabIndex = 5;
             // 
             // Teeth
             // 
@@ -1404,7 +1404,9 @@
             // 
             this.Movement.HeaderText = "Подвижность";
             this.Movement.Name = "Movement";
-            this.Movement.Width = 50;
+            this.Movement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Movement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Movement.Width = 70;
             // 
             // K
             // 
@@ -1453,10 +1455,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
@@ -1574,7 +1576,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pt;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pl;
         private System.Windows.Forms.DataGridViewCheckBoxColumn A;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Movement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Movement;
         private System.Windows.Forms.DataGridViewCheckBoxColumn K;
         private System.Windows.Forms.DataGridViewCheckBoxColumn I;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
