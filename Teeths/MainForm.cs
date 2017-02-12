@@ -108,6 +108,7 @@ namespace Teeths
                 button2.Enabled = false;
                 button3.Enabled = false;
                 linkLabel53.Enabled = false;
+                tabPage3.Enabled = false;
                 this.ClearFields();
             }
             else
@@ -116,6 +117,7 @@ namespace Teeths
                 button2.Enabled = true;
                 button3.Enabled = true;
                 linkLabel53.Enabled = true;
+                tabPage3.Enabled = true;
 
                 Client _cl = new Client();
                 _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
@@ -158,6 +160,26 @@ namespace Teeths
                 clientlist.SelectedIndex = 0;
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int ind = dataGridView1.CurrentCell.RowIndex;
+                dataGridView1.Rows.RemoveAt(ind);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
     }
 }

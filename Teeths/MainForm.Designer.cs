@@ -112,10 +112,47 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.Teeth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.O = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.R = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.P = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Pt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Pl = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Movement = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.K = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.I = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -1098,19 +1135,312 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tabControl2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(848, 616);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Общая часть";
+            this.tabPage3.Text = "Данные объективного исследования";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Teeth,
+            this.O,
+            this.R,
+            this.C,
+            this.P,
+            this.Pt,
+            this.Pl,
+            this.A,
+            this.Movement,
+            this.K,
+            this.I,
+            this.X,
+            this.Y,
+            this.Z});
+            this.dataGridView1.Location = new System.Drawing.Point(2, 174);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(829, 359);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Location = new System.Drawing.Point(7, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(845, 613);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.button4);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(837, 587);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "Для каждого зуба";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button5);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label14);
+            this.tabPage5.Controls.Add(this.textBox5);
+            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Controls.Add(this.textBox3);
+            this.tabPage5.Controls.Add(this.textBox2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(837, 587);
+            this.tabPage5.TabIndex = 1;
+            this.tabPage5.Text = "Общая информация";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(6, 39);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(825, 101);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(6, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(212, 19);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Данные осмотра полости рта ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(6, 152);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(180, 19);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Таблица состояния зубов";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(707, 549);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(111, 32);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Сохранить";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(191, 19);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Данные внешнего осмотра";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(3, 27);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(825, 61);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(3, 114);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox3.Size = new System.Drawing.Size(825, 61);
+            this.textBox3.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(3, 92);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(136, 19);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Описание прикуса";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(3, 208);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox4.Size = new System.Drawing.Size(825, 61);
+            this.textBox4.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(3, 186);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(647, 19);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Описание состояния слизистой оболочки полости рта, десен, альвеолярных отростков " +
+    "и неба";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Location = new System.Drawing.Point(3, 301);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox5.Size = new System.Drawing.Size(825, 61);
+            this.textBox5.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(3, 279);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(379, 19);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Данные рентгеновских и лабораторных исследований";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(707, 549);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(111, 32);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Сохранить";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(590, 549);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(111, 32);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Удалить строку";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // Teeth
+            // 
+            this.Teeth.HeaderText = "Зуб";
+            this.Teeth.Name = "Teeth";
+            this.Teeth.Width = 50;
+            // 
+            // O
+            // 
+            this.O.HeaderText = "O";
+            this.O.Name = "O";
+            this.O.Width = 50;
+            // 
+            // R
+            // 
+            this.R.HeaderText = "R";
+            this.R.Name = "R";
+            this.R.Width = 50;
+            // 
+            // C
+            // 
+            this.C.HeaderText = "C";
+            this.C.Name = "C";
+            this.C.Width = 50;
+            // 
+            // P
+            // 
+            this.P.HeaderText = "P";
+            this.P.Name = "P";
+            this.P.Width = 50;
+            // 
+            // Pt
+            // 
+            this.Pt.HeaderText = "Pt";
+            this.Pt.Name = "Pt";
+            this.Pt.Width = 50;
+            // 
+            // Pl
+            // 
+            this.Pl.HeaderText = "П";
+            this.Pl.Name = "Pl";
+            this.Pl.Width = 50;
+            // 
+            // A
+            // 
+            this.A.HeaderText = "A";
+            this.A.Name = "A";
+            this.A.Width = 50;
+            // 
+            // Movement
+            // 
+            this.Movement.HeaderText = "Подвижность";
+            this.Movement.Name = "Movement";
+            this.Movement.Width = 50;
+            // 
+            // K
+            // 
+            this.K.HeaderText = "K";
+            this.K.Name = "K";
+            this.K.Width = 50;
+            // 
+            // I
+            // 
+            this.I.HeaderText = "И";
+            this.I.Name = "I";
+            this.I.Width = 50;
+            // 
+            // X
+            // 
+            this.X.HeaderText = "X";
+            this.X.Name = "X";
+            this.X.Width = 50;
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            this.Y.Width = 50;
+            // 
+            // Z
+            // 
+            this.Z.HeaderText = "Z";
+            this.Z.Name = "Z";
+            this.Z.Width = 50;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 641);
+            this.ClientSize = new System.Drawing.Size(862, 641);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -1122,6 +1452,13 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1211,6 +1548,38 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel53;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Teeth;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn O;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn R;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn C;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn P;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Pt;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Pl;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn A;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Movement;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn K;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn I;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Z;
     }
 }
 
