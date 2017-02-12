@@ -94,6 +94,7 @@ namespace Teeths
         private void button3_Click(object sender, EventArgs e) //delete client
         {
             _proc.DeleteAllTeethInfo((int)((clientlist.SelectedItem as ComboboxItem).Value));
+            _proc.DeleteAllTableTeeth((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteClient((int)((clientlist.SelectedItem as ComboboxItem).Value));
             this.ClearFields();
             this.UpdateList();
@@ -132,6 +133,8 @@ namespace Teeths
                 diseaseInfo.Text = _cl.DiseaseInfo.TrimEnd();
                 diseaseNow.Text = _cl.DiseaseNow.TrimEnd();
                 firstdiagnos.Text = _cl.FirstDiagnos.TrimEnd();
+
+                this.load_teethtable(); //загружаем табилицу состояния зубов
             }
         }
 
@@ -179,6 +182,193 @@ namespace Teeths
             {
 
             }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            _proc.DeleteAllTableTeeth((int)(clientlist.SelectedItem as ComboboxItem).Value);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                Everytooth tooths = new Everytooth();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    switch (cell.ColumnIndex)
+                    {
+                        case 0:
+                            if (cell.Value != null)
+                                 tooths.Teeth_number = cell.Value.ToString();
+                            break;
+                        case 1:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.O = 1;
+                                else
+                                    tooths.O = 0;
+                            }
+                            else
+                                tooths.O = 0;
+                            break;
+
+                        case 2:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.R = 1;
+                                else
+                                    tooths.R = 0;
+                            }
+                            else
+                                tooths.R = 0;
+                            break;
+
+                        case 3:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.C = 1;
+                                else
+                                    tooths.C = 0;
+                            }
+                            else
+                                tooths.C = 0;
+                            break;
+
+                        case 4:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.P = 1;
+                                else
+                                    tooths.P = 0;
+                            }
+                            else
+                                tooths.P = 0;
+                            break;
+
+                        case 5:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.Pt = 1;
+                                else
+                                    tooths.Pt = 0;
+                            }
+                            else
+                                tooths.Pt = 0;
+                            break;
+
+                        case 6:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.Pi = 1;
+                                else
+                                    tooths.Pi = 0;
+                            }
+                            else
+                                tooths.Pi = 0;
+                            break;
+
+                        case 7:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.A = 1;
+                                else
+                                    tooths.A = 0;
+                            }
+                            else
+                                tooths.A = 0;
+                            break;
+                        case 8:
+                            if (cell.Value != null)
+                            tooths.Movement = cell.Value.ToString();
+                            break;
+                        case 9:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.K = 1;
+                                else
+                                    tooths.K = 0;
+                            }
+                            else
+                                tooths.K = 0;
+                            break;
+                        case 10:
+                            if (cell.Value != null)
+                            {
+                                if ((bool)cell.Value)
+                                    tooths.I = 1;
+                                else
+                                    tooths.I = 0;
+                            }
+                            else
+                                tooths.I = 0;
+                            break;
+                        case 11:
+                            if (cell.Value != null)
+                            tooths.X = cell.Value.ToString();
+                            break;
+                        case 12:
+                            if (cell.Value != null)
+                                tooths.Y = cell.Value.ToString();
+                            break;
+                        case 13:
+                            if (cell.Value != null)
+                                tooths.Z = cell.Value.ToString();
+                            break;
+                    }
+                }
+
+                tooths.ClientId = (int)(clientlist.SelectedItem as ComboboxItem).Value;
+                _proc.AddTableTeeth(tooths);
+            }
+            MessageBox.Show("Данные сохранены");
+            
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void load_teethtable()
+        {
+            List<Everytooth> _t = new List<Everytooth>();
+
+            _proc.load_teethtable(ref  _t, ((int)(clientlist.SelectedItem as ComboboxItem).Value));//загружаем список состояния зубов выбраного пициента
+
+            
+            int counter = 0;
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < _t.Count - 1; i++)
+            {
+                dataGridView1.Rows.Add();
+            }
+                foreach (Everytooth t in _t)
+                {
+
+                    dataGridView1.Rows[counter].Cells[0].Value = t.Teeth_number;
+                    dataGridView1.Rows[counter].Cells[1].Value = (t.O == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[2].Value = (t.R == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[3].Value = (t.C == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[4].Value = (t.P == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[5].Value = (t.Pt == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[6].Value = (t.Pi == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[7].Value = (t.A == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[8].Value = t.Movement;
+                    dataGridView1.Rows[counter].Cells[9].Value = (t.K == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[10].Value = (t.I == 1 ? true : false);
+                    dataGridView1.Rows[counter].Cells[11].Value = t.X;
+                    dataGridView1.Rows[counter].Cells[12].Value = t.Y;
+                    dataGridView1.Rows[counter].Cells[13].Value = t.Z;
+                    counter++;
+                }
+
 
         }
     }

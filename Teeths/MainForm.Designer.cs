@@ -1169,6 +1169,7 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Для каждого зуба";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // button6
             // 
@@ -1188,6 +1189,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Сохранить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label13
             // 

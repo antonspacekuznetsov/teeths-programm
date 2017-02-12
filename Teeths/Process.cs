@@ -15,11 +15,7 @@ namespace Teeths
     {
 
 
-        public ProcessClient()
-        {
-
-
-        }
+        public ProcessClient()  { }
 
         public void update_clientList(ref List<ClientsListData> _data)
         {
@@ -129,8 +125,67 @@ namespace Teeths
             {
                 MessageBox.Show("Ошибка" + ex.Message);
             }
+        }
 
 
+
+        public void AddTableTeeth(Everytooth _t)
+        {
+            try
+            {
+                using (IController<Everytooth> sql = new Controller<Everytooth>())
+                {
+                    sql.Create(_t);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public void load_teethtable(ref List<Everytooth> _t, int id)
+        {
+            try
+            {
+                using (IController<Everytooth> sql = new Controller<Everytooth>())
+                {
+                    foreach (Everytooth t in sql.GetAll())
+                    {
+                        if (t.ClientId == id)
+                            _t.Add(t);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public void DeleteAllTableTeeth(int id)
+        {
+            try
+            {
+                using (IController<Everytooth> sql = new Controller<Everytooth>())
+                {
+                    foreach (Everytooth tf in sql.GetAll())
+                    {
+                        if (tf.ClientId == id)
+                        {
+                            sql.Delete(tf.Id);
+                        }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
         }
     }
 
