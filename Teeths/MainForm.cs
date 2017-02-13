@@ -93,6 +93,7 @@ namespace Teeths
 
         private void button3_Click(object sender, EventArgs e) //delete client
         {
+            _proc.DeleteAllGeneralData((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteAllTeethInfo((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteAllTableTeeth((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteClient((int)((clientlist.SelectedItem as ComboboxItem).Value));
@@ -135,6 +136,7 @@ namespace Teeths
                 firstdiagnos.Text = _cl.FirstDiagnos.TrimEnd();
 
                 this.load_teethtable(); //загружаем табилицу состояния зубов
+                this.load_dataview();
             }
         }
 
@@ -370,6 +372,30 @@ namespace Teeths
                 }
 
 
+        }
+
+        private void load_dataview()
+        {
+            DataView dv = new DataView();
+            _proc.loadGeneralData(ref dv, ((int)(clientlist.SelectedItem as ComboboxItem).Value));
+            if (dv == null)
+                return;
+            textBox2.Text = dv.DataOuterView == null ? "" : dv.DataOuterView.TrimEnd();
+            textBox3.Text = dv.Descriptionbite == null ? "" : dv.Descriptionbite.TrimEnd();
+            textBox4.Text = dv.Descriptionmucous == null ? "" : dv.Descriptionmucous.TrimEnd();
+            textBox5.Text = dv.DataXray == null ? "" : dv.DataXray.TrimEnd();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DataView dv = new DataView();
+            dv.DataOuterView = textBox2.Text;
+            dv.Descriptionbite = textBox3.Text;
+            dv.Descriptionmucous = textBox4.Text;
+            dv.DataXray = textBox5.Text;
+            dv.ClientId = (int)(clientlist.SelectedItem as ComboboxItem).Value;
+            _proc.AddGeneralData(dv);
+            MessageBox.Show("Данные сохранены");
         }
     }
 }

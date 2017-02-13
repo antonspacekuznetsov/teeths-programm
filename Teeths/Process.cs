@@ -187,6 +187,86 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+
+
+
+        public void AddGeneralData(DataView _dv)
+        {
+            try
+            {
+                using (IController<DataView> sql = new Controller<DataView>())
+                {
+                    bool priznak = false;
+
+                    foreach (DataView d in sql.GetAll())
+                    {
+                        if (d.ClientId == _dv.ClientId)
+                        {
+                            d.DataOuterView = _dv.DataOuterView;
+                            d.DataXray = _dv.DataXray;
+                            d.Descriptionbite = _dv.Descriptionbite;
+                            d.Descriptionmucous = _dv.Descriptionmucous;
+                            sql.Update(d);
+                            priznak = true;
+                            break;
+                        }
+                    }
+                    if (!priznak)
+                        sql.Create(_dv);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public void DeleteAllGeneralData(int id)
+        {
+            try
+            {
+                using (IController<DataView> sql = new Controller<DataView>())
+                {
+                    foreach (DataView tf in sql.GetAll())
+                    {
+                        if (tf.ClientId == id)
+                        {
+                            sql.Delete(tf.Id);
+                        }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public void loadGeneralData(ref DataView _dv, int id)
+        {
+            try
+            {
+                using (IController<DataView> sql = new Controller<DataView>())
+                {
+                    foreach (DataView t in sql.GetAll())
+                    {
+                        if (t.ClientId == id)
+                        {
+                            _dv = t;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
     }
 
     class ProcessTeethInfo
