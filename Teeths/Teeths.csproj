@@ -102,6 +102,9 @@
     <Compile Include="Everytooth.cs">
       <DependentUpon>ContextModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GeneralPart.cs">
+      <DependentUpon>ContextModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="JawModel.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -267,6 +267,87 @@ namespace Teeths
                 MessageBox.Show("Ошибка" + ex.Message);
             }
         }
+
+        public void addGeneralPart(GeneralPart _gp)
+        {
+            try
+            {
+                using (IController<GeneralPart> sql = new Controller<GeneralPart>())
+                {
+                    bool priznak = false;
+                    foreach (GeneralPart gp in sql.GetAll())
+                    {
+                        if (gp.ClientId == _gp.ClientId)
+                        {
+                            gp.cureFeatures = _gp.cureFeatures;
+                            gp.curePlan = _gp.curePlan;
+                            gp.signConsulation = _gp.signConsulation;
+                            gp.viewPlan = _gp.viewPlan;
+
+                            sql.Update(gp);
+
+                            priznak = true;
+                        }
+                    }
+
+                    if (!priznak)
+                    {
+                        sql.Create(_gp);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+
+        }
+
+        public void loadGeneralPart(ref GeneralPart gp, int id)
+        {
+            try
+            {
+                using (IController<GeneralPart> sql = new Controller<GeneralPart>())
+                {
+                    foreach (GeneralPart t in sql.GetAll())
+                    {
+                        if (t.ClientId == id)
+                        {
+                            gp = t;
+                            break;
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        public void deleteAllGeneralPart(int id)
+        {
+            try
+            {
+                using (IController<GeneralPart> sql = new Controller<GeneralPart>())
+                {
+                    foreach (GeneralPart t in sql.GetAll())
+                    {
+                        if (t.ClientId == id)
+                        {
+                            sql.Delete(t.Id);
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
     }
 
     class ProcessTeethInfo
@@ -335,6 +416,5 @@ namespace Teeths
             return result.TrimEnd();
 
         }
-
     }
 }

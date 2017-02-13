@@ -53,6 +53,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="GeneralParts">
+      <EntityTypeMapping TypeName="TeethsModel.GeneralPart">
+        <MappingFragment StoreEntitySet="GeneralPart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="viewPlan" ColumnName="viewPlan" />
+          <ScalarProperty Name="curePlan" ColumnName="curePlan" />
+          <ScalarProperty Name="cureFeatures" ColumnName="cureFeatures" />
+          <ScalarProperty Name="signConsulation" ColumnName="signConsulation" />
+          <ScalarProperty Name="terms" ColumnName="terms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TeethInformations">
       <EntityTypeMapping TypeName="TeethsModel.TeethInformation">
         <MappingFragment StoreEntitySet="TeethInformation">

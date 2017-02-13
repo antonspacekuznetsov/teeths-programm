@@ -4,6 +4,7 @@
     <EntitySet Name="Clients" EntityType="TeethsModel.Client" />
     <EntitySet Name="DataViews" EntityType="TeethsModel.DataView" />
     <EntitySet Name="Everyteeth" EntityType="TeethsModel.Everytooth" />
+    <EntitySet Name="GeneralParts" EntityType="TeethsModel.GeneralPart" />
     <EntitySet Name="TeethInformations" EntityType="TeethsModel.TeethInformation" />
     <AssociationSet Name="FK_DataView_Clients" Association="TeethsModel.FK_DataView_Clients">
       <End Role="Clients" EntitySet="Clients" />
@@ -12,6 +13,10 @@
     <AssociationSet Name="FK_Everyteeth_Clients" Association="TeethsModel.FK_Everyteeth_Clients">
       <End Role="Clients" EntitySet="Clients" />
       <End Role="Everyteeth" EntitySet="Everyteeth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GeneralPart_Clients" Association="TeethsModel.FK_GeneralPart_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="GeneralPart" EntitySet="GeneralParts" />
     </AssociationSet>
     <AssociationSet Name="FK_TeethInfo_Clients" Association="TeethsModel.FK_TeethInfo_Clients">
       <End Role="Clients" EntitySet="Clients" />
@@ -35,6 +40,7 @@
     <Property Name="DiseaseNow" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
     <NavigationProperty Name="DataViews" Relationship="TeethsModel.FK_DataView_Clients" FromRole="Clients" ToRole="DataView" />
     <NavigationProperty Name="Everyteeth" Relationship="TeethsModel.FK_Everyteeth_Clients" FromRole="Clients" ToRole="Everyteeth" />
+    <NavigationProperty Name="GeneralParts" Relationship="TeethsModel.FK_GeneralPart_Clients" FromRole="Clients" ToRole="GeneralPart" />
     <NavigationProperty Name="TeethInformations" Relationship="TeethsModel.FK_TeethInfo_Clients" FromRole="Clients" ToRole="TeethInformation" />
   </EntityType>
   <EntityType Name="DataView">
@@ -72,6 +78,19 @@
     <Property Name="Z" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <NavigationProperty Name="Client" Relationship="TeethsModel.FK_Everyteeth_Clients" FromRole="Everyteeth" ToRole="Clients" />
   </EntityType>
+  <EntityType Name="GeneralPart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientId" Type="Int32" Nullable="false" />
+    <Property Name="viewPlan" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <Property Name="curePlan" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <Property Name="cureFeatures" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <Property Name="signConsulation" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <Property Name="terms" Type="String" MaxLength="250" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Client" Relationship="TeethsModel.FK_GeneralPart_Clients" FromRole="GeneralPart" ToRole="Clients" />
+  </EntityType>
   <EntityType Name="TeethInformation">
     <Key>
       <PropertyRef Name="Id" />
@@ -102,6 +121,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Everyteeth">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GeneralPart_Clients">
+    <End Role="Clients" Type="TeethsModel.Client" Multiplicity="1" />
+    <End Role="GeneralPart" Type="TeethsModel.GeneralPart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GeneralPart">
         <PropertyRef Name="ClientId" />
       </Dependent>
     </ReferentialConstraint>

@@ -47,7 +47,7 @@ namespace Teeths
                 _cl.Number = number.Text;
                 _cl.Createdate = createdate.Value;
                 _cl.Old = old.Text;
-                //_cl.Sex = sex.SelectedIndex;
+                _cl.Sex = (sex.Text == "Мужской" ? (byte)1 : (byte)0);
                 _cl.Adress = adress.Text;
                 _cl.Proffesion = profesion.Text;
                 _cl.DiseaseInfo = diseaseInfo.Text;
@@ -93,6 +93,7 @@ namespace Teeths
 
         private void button3_Click(object sender, EventArgs e) //delete client
         {
+            _proc.deleteAllGeneralPart((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteAllGeneralData((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteAllTeethInfo((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteAllTableTeeth((int)((clientlist.SelectedItem as ComboboxItem).Value));
@@ -111,6 +112,7 @@ namespace Teeths
                 button3.Enabled = false;
                 linkLabel53.Enabled = false;
                 tabPage3.Enabled = false;
+                tabPage2.Enabled = false;
                 this.ClearFields();
             }
             else
@@ -120,6 +122,7 @@ namespace Teeths
                 button3.Enabled = true;
                 linkLabel53.Enabled = true;
                 tabPage3.Enabled = true;
+                tabPage2.Enabled = true;
 
                 Client _cl = new Client();
                 _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
@@ -134,9 +137,13 @@ namespace Teeths
                 diseaseInfo.Text = _cl.DiseaseInfo.TrimEnd();
                 diseaseNow.Text = _cl.DiseaseNow.TrimEnd();
                 firstdiagnos.Text = _cl.FirstDiagnos.TrimEnd();
-
+                if (_cl.Sex == 1)
+                    sex.Text = "Мужской";
+                if (_cl.Sex == 0)
+                    sex.Text = "Женский";
                 this.load_teethtable(); //загружаем табилицу состояния зубов
                 this.load_dataview();
+                this.loadGenerlPart();
             }
         }
 
@@ -162,9 +169,8 @@ namespace Teeths
                 item.Text = s.Name.TrimEnd();
                 item.Value = s.Id;
                 clientlist.Items.Add(item);
-                clientlist.SelectedIndex = 0;
-
             }
+            clientlist.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -396,6 +402,33 @@ namespace Teeths
             dv.ClientId = (int)(clientlist.SelectedItem as ComboboxItem).Value;
             _proc.AddGeneralData(dv);
             MessageBox.Show("Данные сохранены");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            GeneralPart gp = new GeneralPart();
+            gp.ClientId = (int)(clientlist.SelectedItem as ComboboxItem).Value;
+            gp.viewPlan = textBox9.Text;
+            gp.curePlan = textBox8.Text;
+            gp.cureFeatures = textBox7.Text;
+            gp.signConsulation = textBox6.Text;
+            gp.terms = textBox10.Text;
+
+            _proc.addGeneralPart(gp);
+
+            MessageBox.Show("Данные сохранены");
+        }
+
+        private void loadGenerlPart()
+        {
+            GeneralPart gp = new GeneralPart();
+            _proc.loadGeneralPart(ref gp, ((int)(clientlist.SelectedItem as ComboboxItem).Value));
+
+            textBox10.Text = gp.terms == null ? "" : gp.terms;
+            textBox9.Text = gp.viewPlan == null ? "" : gp.viewPlan;
+            textBox8.Text = gp.curePlan == null ? "" : gp.curePlan;
+            textBox7.Text = gp.cureFeatures == null ? "" : gp.cureFeatures;
+            textBox6.Text = gp.signConsulation == null ? "" : gp.signConsulation;
         }
     }
 }
