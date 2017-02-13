@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Teeths.server;
+using Teeths.QRCoder;
 
 namespace Teeths
 {
@@ -429,6 +430,12 @@ namespace Teeths
             textBox8.Text = gp.curePlan == null ? "" : gp.curePlan;
             textBox7.Text = gp.cureFeatures == null ? "" : gp.cureFeatures;
             textBox6.Text = gp.signConsulation == null ? "" : gp.signConsulation;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            QRCoding qr = new QRCoding();
+            qr.GenerateQr("Hello world");
         }
     }
 }

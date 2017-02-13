@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeethsModelStoreContainer" CdmEntityContainer="TeethsEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="TeethsModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Old" ColumnName="Old" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Proffesion" ColumnName="Proffesion" />
+          <ScalarProperty Name="FirstDiagnos" ColumnName="FirstDiagnos" />
+          <ScalarProperty Name="DiseaseInfo" ColumnName="DiseaseInfo" />
+          <ScalarProperty Name="DiseaseNow" ColumnName="DiseaseNow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataViews">
+      <EntityTypeMapping TypeName="TeethsModel.DataView">
+        <MappingFragment StoreEntitySet="DataView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="DataOuterView" ColumnName="DataOuterView" />
+          <ScalarProperty Name="Descriptionbite" ColumnName="Descriptionbite" />
+          <ScalarProperty Name="Descriptionmucous" ColumnName="Descriptionmucous" />
+          <ScalarProperty Name="DataXray" ColumnName="DataXray" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Everyteeth">
+      <EntityTypeMapping TypeName="TeethsModel.Everytooth">
+        <MappingFragment StoreEntitySet="Everyteeth">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ViewData" ColumnName="ViewData" />
+          <ScalarProperty Name="Teeth_number" ColumnName="Teeth_number" />
+          <ScalarProperty Name="O" ColumnName="O" />
+          <ScalarProperty Name="R" ColumnName="R" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="P" ColumnName="P" />
+          <ScalarProperty Name="Pt" ColumnName="Pt" />
+          <ScalarProperty Name="Pi" ColumnName="Pi" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="Movement" ColumnName="Movement" />
+          <ScalarProperty Name="K" ColumnName="K" />
+          <ScalarProperty Name="I" ColumnName="I" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GeneralParts">
+      <EntityTypeMapping TypeName="TeethsModel.GeneralPart">
+        <MappingFragment StoreEntitySet="GeneralPart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="viewPlan" ColumnName="viewPlan" />
+          <ScalarProperty Name="curePlan" ColumnName="curePlan" />
+          <ScalarProperty Name="cureFeatures" ColumnName="cureFeatures" />
+          <ScalarProperty Name="signConsulation" ColumnName="signConsulation" />
+          <ScalarProperty Name="terms" ColumnName="terms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeethInformations">
+      <EntityTypeMapping TypeName="TeethsModel.TeethInformation">
+        <MappingFragment StoreEntitySet="TeethInformation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Teeth_number" ColumnName="Teeth_number" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
