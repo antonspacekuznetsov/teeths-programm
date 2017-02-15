@@ -338,28 +338,34 @@ namespace Teeths
             int counter = 0;
             dataGridView1.Rows.Clear();
 
-            for (int i = 0; i < _t.Count - 1; i++)
+            for (int i = 0; i < _t.Count; i++)
             {
                 dataGridView1.Rows.Add();
             }
                 foreach (Everytooth t in _t)
                 {
-
-                    dataGridView1.Rows[counter].Cells[0].Value = t.Teeth_number;
-                    dataGridView1.Rows[counter].Cells[1].Value = (t.O == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[2].Value = (t.R == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[3].Value = (t.C == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[4].Value = (t.P == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[5].Value = (t.Pt == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[6].Value = (t.Pi == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[7].Value = (t.A == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[8].Value = t.Movement;
-                    dataGridView1.Rows[counter].Cells[9].Value = (t.K == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[10].Value = (t.I == 1 ? true : false);
-                    dataGridView1.Rows[counter].Cells[11].Value = t.X;
-                    dataGridView1.Rows[counter].Cells[12].Value = t.Y;
-                    dataGridView1.Rows[counter].Cells[13].Value = t.Z;
-                    counter++;
+                    try
+                    {
+                        dataGridView1.Rows[counter].Cells[0].Value = t.Teeth_number;
+                        dataGridView1.Rows[counter].Cells[1].Value = (t.O == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[2].Value = (t.R == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[3].Value = (t.C == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[4].Value = (t.P == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[5].Value = (t.Pt == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[6].Value = (t.Pi == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[7].Value = (t.A == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[8].Value = t.Movement;
+                        dataGridView1.Rows[counter].Cells[9].Value = (t.K == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[10].Value = (t.I == 1 ? true : false);
+                        dataGridView1.Rows[counter].Cells[11].Value = t.X;
+                        dataGridView1.Rows[counter].Cells[12].Value = t.Y;
+                        dataGridView1.Rows[counter].Cells[13].Value = t.Z;
+                        counter++;
+                    }
+                    catch (Exception ex)
+                    {
+                        ;
+                    }
                 }
 
                 if (_t.Count  == 0)
