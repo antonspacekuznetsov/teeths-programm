@@ -228,6 +228,7 @@
             this.button9.TabIndex = 6;
             this.button9.Text = "Считать QR-код";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 

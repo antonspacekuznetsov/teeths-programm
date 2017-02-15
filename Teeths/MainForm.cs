@@ -114,6 +114,7 @@ namespace Teeths
                 linkLabel53.Enabled = false;
                 tabPage3.Enabled = false;
                 tabPage2.Enabled = false;
+                button8.Enabled = false;
                 this.ClearFields();
             }
             else
@@ -124,6 +125,7 @@ namespace Teeths
                 linkLabel53.Enabled = true;
                 tabPage3.Enabled = true;
                 tabPage2.Enabled = true;
+                button8.Enabled = true;
 
                 Client _cl = new Client();
                 _proc.getClientData(ref _cl, (int)((clientlist.SelectedItem as ComboboxItem).Value));
@@ -474,7 +476,52 @@ namespace Teeths
         private void button8_Click(object sender, EventArgs e)
         {
             QRCoding qr = new QRCoding();
-            qr.GenerateQr("Hello world");
+            string tmp="";
+            tmp += "ФИО: "+name.Text + ";";
+            tmp += "Возраст: "+old.Text + ";";
+            tmp += "Пол: "+sex.Text + ";";
+
+            foreach ( DataGridViewRow row in dataGridView1.Rows )
+            {
+                string str = "";
+                int counter = 0;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    
+                    switch (cell.ColumnIndex)
+                    {
+
+                        case 0:
+                            str += "Зуб:" + (cell.Value == null ? "" : cell.Value.ToString().TrimEnd());
+                            break;
+                            
+                        case 11:
+                            if (cell.Value != null)
+                                counter++;
+                            str += "X:" + (cell.Value == null ? "" : cell.Value.ToString().TrimEnd());
+                            break;
+
+                        case 12:
+                            if (cell.Value != null)
+                                counter++;
+                            str += "Y:" + (cell.Value == null ? "" : cell.Value.ToString().TrimEnd());
+                            break;
+
+                        case 13:
+                            if (cell.Value != null)
+                                counter++;
+                            str += "Z:" + (cell.Value == null ? "" : cell.Value.ToString().TrimEnd());
+                            break;
+                    }
+                }
+                if (counter > 0)
+                    tmp += str+";";
+            }
+
+            if (tmp.Length > 4296)
+                MessageBox.Show("Длина превышает");
+            else
+                qr.GenerateQr(tmp);
         }
 
         private void InputTeethInfo(string number)
@@ -803,6 +850,11 @@ namespace Teeths
         {
             LinkLabel lnk = (LinkLabel)sender;
             this.InputTeethInfo(lnk.Text);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
