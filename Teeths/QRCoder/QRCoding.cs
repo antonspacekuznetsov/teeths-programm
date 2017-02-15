@@ -21,8 +21,11 @@ namespace Teeths.QRCoder
         {
             QRCodeData qrCodeData = _qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
-
-            Bitmap qrCodeImage = new Bitmap(qrCode.GetGraphic(10), new Size(Screen.PrimaryScreen.Bounds.Height-80, Screen.PrimaryScreen.Bounds.Height-80));
+            Bitmap qrCodeImage;
+            if (qrCode.GetGraphic(10).Height > Screen.PrimaryScreen.Bounds.Height-80)
+                qrCodeImage = new Bitmap(qrCode.GetGraphic(10), new Size(Screen.PrimaryScreen.Bounds.Height-80, Screen.PrimaryScreen.Bounds.Height-80));
+            else
+                qrCodeImage = qrCode.GetGraphic(20);
                 
             Form form = new QRCodeWindow(qrCodeImage, qrCodeImage.Width, qrCodeImage.Height);
             Size s = new Size(qrCodeImage.Width, qrCodeImage.Height);

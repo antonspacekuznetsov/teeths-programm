@@ -113,12 +113,6 @@
     <Compile Include="GeneralPart.cs">
       <DependentUpon>ContextModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="JawModel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JawModel.Designer.cs">
-      <DependentUpon>JawModel.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,18 +132,9 @@
     </Compile>
     <Compile Include="server\Controller.cs" />
     <Compile Include="server\IController.cs" />
-    <Compile Include="TeethInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeethInfo.Designer.cs">
-      <DependentUpon>TeethInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="TeethInformation.cs">
       <DependentUpon>ContextModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="JawModel.resx">
-      <DependentUpon>JawModel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,9 +149,6 @@
     </Compile>
     <EmbeddedResource Include="QRCoder\QRCodeWindow.resx">
       <DependentUpon>QRCodeWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeethInfo.resx">
-      <DependentUpon>TeethInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ContextModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

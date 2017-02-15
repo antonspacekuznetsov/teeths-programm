@@ -33,11 +33,7 @@ namespace Teeths
 
         }
 
-        private void linkLabel53_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) //show teeth's model
-        {
-            Form form2 = new JawModel((int)((clientlist.SelectedItem as ComboboxItem).Value));
-            form2.ShowDialog();
-        }
+ 
 
         private void button1_Click(object sender, EventArgs e) //add New Client
         {
@@ -57,7 +53,7 @@ namespace Teeths
                 _proc.AddNewClient(_cl);
                 this.ClearFields();
                 MessageBox.Show("Новый пациент добавлен!");
-                this.UpdateList();
+                this.UpdateList(0);
             }
         }
 
@@ -100,7 +96,7 @@ namespace Teeths
             _proc.DeleteAllTableTeeth((int)((clientlist.SelectedItem as ComboboxItem).Value));
             _proc.DeleteClient((int)((clientlist.SelectedItem as ComboboxItem).Value));
             this.ClearFields();
-            this.UpdateList();
+            this.UpdateList(0);
             MessageBox.Show("Данные о пациенте удалены!");
         }
 
@@ -111,7 +107,7 @@ namespace Teeths
                 button1.Enabled = true;
                 button2.Enabled = false;
                 button3.Enabled = false;
-                linkLabel53.Enabled = false;
+
                 tabPage3.Enabled = false;
                 tabPage2.Enabled = false;
                 button8.Enabled = false;
@@ -122,7 +118,7 @@ namespace Teeths
                 button1.Enabled = false;
                 button2.Enabled = true;
                 button3.Enabled = true;
-                linkLabel53.Enabled = true;
+
                 tabPage3.Enabled = true;
                 tabPage2.Enabled = true;
                 button8.Enabled = true;
@@ -151,10 +147,10 @@ namespace Teeths
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.UpdateList();
+            this.UpdateList(0);
         }
 
-        private void UpdateList()
+        private void UpdateList(int index)
         {
 
             List<ClientsListData> clients = new List<ClientsListData>();
@@ -172,7 +168,7 @@ namespace Teeths
                 item.Value = s.Id;
                 clientlist.Items.Add(item);
             }
-            clientlist.SelectedIndex = 0;
+            clientlist.SelectedIndex = index;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -180,20 +176,7 @@ namespace Teeths
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
 
-            try
-            {
-                int ind = dataGridView1.CurrentCell.RowIndex;
-                dataGridView1.Rows.RemoveAt(ind);
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -518,15 +501,15 @@ namespace Teeths
                     tmp += str+";";
             }
 
-            if (tmp.Length > 4296)
-                MessageBox.Show("Длина превышает");
+            if (tmp.Length > 3000)
+                MessageBox.Show("Длина превышает 3000 знаков");
             else
                 qr.GenerateQr(tmp);
         }
 
         private void InputTeethInfo(string number)
         {
-            tabControl2.SelectTab(0);
+            tabControl2.SelectTab(1);
             dataGridView1.ClearSelection();
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -853,6 +836,11 @@ namespace Teeths
         }
 
         private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel53_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

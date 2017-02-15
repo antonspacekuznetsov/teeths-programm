@@ -42,10 +42,8 @@ C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\bin\Debug\EntityFramework.xml
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.csprojResolveAssemblyReference.cache
-C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.JawModel.resources
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.MainForm.resources
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.Properties.Resources.resources
-C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.TeethInfo.resources
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\obj\Debug\Teeths.csproj.GenerateResource.Cache
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\bin\Debug\QRCoder.dll
 C:\Users\WhoCarryBalckHat\Documents\Visual Studio 2012\Projects\teeths-programm\Teeths\bin\Debug\UnityEngine.dll

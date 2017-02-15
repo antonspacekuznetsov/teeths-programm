@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.linkLabel53 = new System.Windows.Forms.LinkLabel();
             this.clientlist = new System.Windows.Forms.ComboBox();
             this.sex = new System.Windows.Forms.ComboBox();
             this.createdate = new System.Windows.Forms.DateTimePicker();
@@ -62,12 +60,25 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Teeth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.O = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.R = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.P = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Pt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Pl = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Movement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.K = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.I = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -78,18 +89,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.linkLabel52 = new System.Windows.Forms.LinkLabel();
             this.linkLabel51 = new System.Windows.Forms.LinkLabel();
@@ -144,20 +143,18 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Teeth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.O = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.R = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.P = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Pt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Pl = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Movement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.K = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.I = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -165,9 +162,9 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage5.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -184,9 +181,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.button9);
             this.tabPage1.Controls.Add(this.button8);
-            this.tabPage1.Controls.Add(this.linkLabel53);
             this.tabPage1.Controls.Add(this.clientlist);
             this.tabPage1.Controls.Add(this.sex);
             this.tabPage1.Controls.Add(this.createdate);
@@ -220,37 +215,15 @@
             this.tabPage1.Text = "Паспортная часть";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(581, 580);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(95, 23);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Считать QR-код";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(438, 580);
+            this.button8.Location = new System.Drawing.Point(677, 583);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(137, 23);
             this.button8.TabIndex = 6;
             this.button8.Text = "Сгенерировать QR-код";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // linkLabel53
-            // 
-            this.linkLabel53.AutoSize = true;
-            this.linkLabel53.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel53.Location = new System.Drawing.Point(691, 580);
-            this.linkLabel53.Name = "linkLabel53";
-            this.linkLabel53.Size = new System.Drawing.Size(123, 19);
-            this.linkLabel53.TabIndex = 5;
-            this.linkLabel53.TabStop = true;
-            this.linkLabel53.Text = "Модель челюсти";
-            this.linkLabel53.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel53_LinkClicked);
             // 
             // clientlist
             // 
@@ -508,9 +481,9 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Location = new System.Drawing.Point(7, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -519,7 +492,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button6);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label12);
@@ -533,16 +505,6 @@
             this.tabPage4.Text = "Для каждого зуба";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(590, 549);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 32);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Удалить строку";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
@@ -608,6 +570,92 @@
             this.dataGridView1.Size = new System.Drawing.Size(829, 359);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Teeth
+            // 
+            this.Teeth.HeaderText = "Зуб";
+            this.Teeth.Name = "Teeth";
+            this.Teeth.Width = 50;
+            // 
+            // O
+            // 
+            this.O.HeaderText = "O";
+            this.O.Name = "O";
+            this.O.Width = 50;
+            // 
+            // R
+            // 
+            this.R.HeaderText = "R";
+            this.R.Name = "R";
+            this.R.Width = 50;
+            // 
+            // C
+            // 
+            this.C.HeaderText = "C";
+            this.C.Name = "C";
+            this.C.Width = 50;
+            // 
+            // P
+            // 
+            this.P.HeaderText = "P";
+            this.P.Name = "P";
+            this.P.Width = 50;
+            // 
+            // Pt
+            // 
+            this.Pt.HeaderText = "Pt";
+            this.Pt.Name = "Pt";
+            this.Pt.Width = 50;
+            // 
+            // Pl
+            // 
+            this.Pl.HeaderText = "П";
+            this.Pl.Name = "Pl";
+            this.Pl.Width = 50;
+            // 
+            // A
+            // 
+            this.A.HeaderText = "A";
+            this.A.Name = "A";
+            this.A.Width = 50;
+            // 
+            // Movement
+            // 
+            this.Movement.HeaderText = "Подвижность";
+            this.Movement.Name = "Movement";
+            this.Movement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Movement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Movement.Width = 79;
+            // 
+            // K
+            // 
+            this.K.HeaderText = "K";
+            this.K.Name = "K";
+            this.K.Width = 50;
+            // 
+            // I
+            // 
+            this.I.HeaderText = "И";
+            this.I.Name = "I";
+            this.I.Width = 50;
+            // 
+            // X
+            // 
+            this.X.HeaderText = "X";
+            this.X.Name = "X";
+            this.X.Width = 50;
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            this.Y.Width = 50;
+            // 
+            // Z
+            // 
+            this.Z.HeaderText = "Z";
+            this.Z.Name = "Z";
+            this.Z.Width = 50;
             // 
             // tabPage5
             // 
@@ -718,137 +766,6 @@
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(825, 61);
             this.textBox2.TabIndex = 5;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.textBox10);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(848, 616);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Общая часть";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(716, 564);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 32);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Сохранить";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(12, 389);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(279, 19);
-            this.label22.TabIndex = 12;
-            this.label22.Text = "Формулировки клинических диагнозов ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(12, 294);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(153, 19);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "Записи консультаций";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(12, 201);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(159, 19);
-            this.label19.TabIndex = 13;
-            this.label19.Text = "Особенности лечения";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(12, 107);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(103, 19);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "План лечения";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(12, 20);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(142, 19);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "План обследования";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox10.Location = new System.Drawing.Point(12, 411);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox10.Size = new System.Drawing.Size(825, 61);
-            this.textBox10.TabIndex = 8;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(12, 316);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(825, 61);
-            this.textBox6.TabIndex = 8;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(12, 223);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox7.Size = new System.Drawing.Size(825, 61);
-            this.textBox7.TabIndex = 9;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.Location = new System.Drawing.Point(12, 129);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(825, 61);
-            this.textBox8.TabIndex = 10;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox9.Location = new System.Drawing.Point(12, 42);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox9.Size = new System.Drawing.Size(825, 61);
-            this.textBox9.TabIndex = 11;
             // 
             // tabPage6
             // 
@@ -1576,91 +1493,136 @@
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
             // 
-            // Teeth
+            // tabPage2
             // 
-            this.Teeth.HeaderText = "Зуб";
-            this.Teeth.Name = "Teeth";
-            this.Teeth.Width = 50;
+            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.textBox9);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(848, 616);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Общая часть";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // O
+            // button7
             // 
-            this.O.HeaderText = "O";
-            this.O.Name = "O";
-            this.O.Width = 50;
+            this.button7.Location = new System.Drawing.Point(716, 564);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(111, 32);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Сохранить";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // R
+            // label22
             // 
-            this.R.HeaderText = "R";
-            this.R.Name = "R";
-            this.R.Width = 50;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(12, 389);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(279, 19);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Формулировки клинических диагнозов ";
             // 
-            // C
+            // label18
             // 
-            this.C.HeaderText = "C";
-            this.C.Name = "C";
-            this.C.Width = 50;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(12, 294);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(153, 19);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Записи консультаций";
             // 
-            // P
+            // label19
             // 
-            this.P.HeaderText = "P";
-            this.P.Name = "P";
-            this.P.Width = 50;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(12, 201);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(159, 19);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Особенности лечения";
             // 
-            // Pt
+            // label20
             // 
-            this.Pt.HeaderText = "Pt";
-            this.Pt.Name = "Pt";
-            this.Pt.Width = 50;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(12, 107);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(103, 19);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "План лечения";
             // 
-            // Pl
+            // label21
             // 
-            this.Pl.HeaderText = "П";
-            this.Pl.Name = "Pl";
-            this.Pl.Width = 50;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(12, 20);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(142, 19);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "План обследования";
             // 
-            // A
+            // textBox10
             // 
-            this.A.HeaderText = "A";
-            this.A.Name = "A";
-            this.A.Width = 50;
+            this.textBox10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox10.Location = new System.Drawing.Point(12, 411);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox10.Size = new System.Drawing.Size(825, 61);
+            this.textBox10.TabIndex = 8;
             // 
-            // Movement
+            // textBox6
             // 
-            this.Movement.HeaderText = "Подвижность";
-            this.Movement.Name = "Movement";
-            this.Movement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Movement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Movement.Width = 79;
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Location = new System.Drawing.Point(12, 316);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox6.Size = new System.Drawing.Size(825, 61);
+            this.textBox6.TabIndex = 8;
             // 
-            // K
+            // textBox7
             // 
-            this.K.HeaderText = "K";
-            this.K.Name = "K";
-            this.K.Width = 50;
+            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.Location = new System.Drawing.Point(12, 223);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox7.Size = new System.Drawing.Size(825, 61);
+            this.textBox7.TabIndex = 9;
             // 
-            // I
+            // textBox8
             // 
-            this.I.HeaderText = "И";
-            this.I.Name = "I";
-            this.I.Width = 50;
+            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.Location = new System.Drawing.Point(12, 129);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox8.Size = new System.Drawing.Size(825, 61);
+            this.textBox8.TabIndex = 10;
             // 
-            // X
+            // textBox9
             // 
-            this.X.HeaderText = "X";
-            this.X.Name = "X";
-            this.X.Width = 50;
-            // 
-            // Y
-            // 
-            this.Y.HeaderText = "Y";
-            this.Y.Name = "Y";
-            this.Y.Width = 50;
-            // 
-            // Z
-            // 
-            this.Z.HeaderText = "Z";
-            this.Z.Name = "Z";
-            this.Z.Width = 50;
+            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox9.Location = new System.Drawing.Point(12, 42);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox9.Size = new System.Drawing.Size(825, 61);
+            this.textBox9.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -1682,11 +1644,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1721,7 +1683,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.LinkLabel linkLabel53;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;
@@ -1739,7 +1700,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label22;
@@ -1752,7 +1712,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.LinkLabel linkLabel52;
