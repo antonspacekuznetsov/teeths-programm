@@ -81,7 +81,7 @@ namespace Teeths
             _cl.Number = number.Text;
             _cl.Createdate = createdate.Value;
             _cl.Old = old.Text;
-            //_cl.Sex = sex.SelectedIndex;
+            _cl.Sex = (sex.Text == "Мужской" ? (byte)1 : (byte)0);
             _cl.Adress = adress.Text;
             _cl.Proffesion = profesion.Text;
             _cl.DiseaseInfo = diseaseInfo.Text;
@@ -132,7 +132,6 @@ namespace Teeths
                 number.Text = _cl.Number.TrimEnd();
                 createdate.Value = (DateTime)_cl.Createdate;
                 old.Text = _cl.Old.TrimEnd();
-                //_cl.Sex = sex.SelectedIndex;
                 adress.Text = _cl.Adress.TrimEnd();
                 profesion.Text = _cl.Proffesion.TrimEnd();
                 diseaseInfo.Text = _cl.DiseaseInfo.TrimEnd();
@@ -142,9 +141,9 @@ namespace Teeths
                     sex.Text = "Мужской";
                 if (_cl.Sex == 0)
                     sex.Text = "Женский";
-                this.load_teethtable(); //загружаем табилицу состояния зубов
                 this.load_dataview();
                 this.loadGenerlPart();
+                this.load_teethtable(); //загружаем табилицу состояния зубов
             }
         }
 
@@ -378,6 +377,11 @@ namespace Teeths
                     counter++;
                 }
 
+                if (_t.Count  == 0)
+                {
+                    this.fillTable();
+                }
+
 
         }
 
@@ -425,17 +429,380 @@ namespace Teeths
             GeneralPart gp = new GeneralPart();
             _proc.loadGeneralPart(ref gp, ((int)(clientlist.SelectedItem as ComboboxItem).Value));
 
-            textBox10.Text = gp.terms == null ? "" : gp.terms;
-            textBox9.Text = gp.viewPlan == null ? "" : gp.viewPlan;
-            textBox8.Text = gp.curePlan == null ? "" : gp.curePlan;
-            textBox7.Text = gp.cureFeatures == null ? "" : gp.cureFeatures;
-            textBox6.Text = gp.signConsulation == null ? "" : gp.signConsulation;
+            textBox10.Text = gp.terms == null ? "" : gp.terms.TrimEnd();
+            textBox9.Text = gp.viewPlan == null ? "" : gp.viewPlan.TrimEnd();
+            textBox8.Text = gp.curePlan == null ? "" : gp.curePlan.TrimEnd();
+            textBox7.Text = gp.cureFeatures == null ? "" : gp.cureFeatures.TrimEnd();
+            textBox6.Text = gp.signConsulation == null ? "" : gp.signConsulation.TrimEnd();
+        }
+
+        private void fillTable()
+        {
+            int x =1, y = 0;
+            for (int i = 0; i < 52; i++)
+                dataGridView1.Rows.Add();
+
+
+            for (int i = 0; i < 52; i++)
+            {
+                y++;
+                dataGridView1.Rows[i].Cells[0].Value = x.ToString() + y.ToString();
+
+                if (x == 4 && y == 8)
+                {
+                    x = 5;
+                    y = 0;
+                }
+
+                if (x > 4 && y == 5)
+                {
+                    x++;
+                    y = 0;
+                }
+
+                if (y == 8)
+                {
+                    y = 0;
+                    x++;
+                }
+
+
+            }
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             QRCoding qr = new QRCoding();
             qr.GenerateQr("Hello world");
+        }
+
+        private void InputTeethInfo(string number)
+        {
+            tabControl2.SelectTab(0);
+            dataGridView1.ClearSelection();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString().TrimEnd() == number)
+                    {
+                        dataGridView1.Rows[i].Selected = true;
+                        dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells[0];
+                        break;
+                    }
+            }
+        }
+
+        private void linkLabel14_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel13_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel15_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel16_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel52_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel51_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel50_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel49_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel48_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel47_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel46_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel45_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel44_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel43_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel32_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel31_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel30_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel29_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel28_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel27_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel26_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel25_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel24_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel23_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel22_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel21_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel20_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel19_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel18_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel17_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel33_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel34_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel35_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel36_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel37_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel38_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel39_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel40_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel41_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
+        }
+
+        private void linkLabel42_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lnk = (LinkLabel)sender;
+            this.InputTeethInfo(lnk.Text);
         }
     }
 }

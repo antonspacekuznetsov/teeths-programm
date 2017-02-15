@@ -343,5 +343,15 @@ namespace Teeths
             LinkLabel lnk = (LinkLabel)sender;
             this.InputTeethInfo(lnk.Text);
         }
+
+        private void linkLabel29_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

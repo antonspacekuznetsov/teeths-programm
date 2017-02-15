@@ -70,7 +70,7 @@ namespace Teeths
                    cl.Number = _cl.Number;
                    cl.Createdate = _cl.Createdate;
                    cl.Old = _cl.Old;
-                   //_cl.Sex = sex.SelectedIndex;
+                   cl.Sex = _cl.Sex;
                    cl.Adress = _cl.Adress;
                    cl.Proffesion = _cl.Proffesion;
                    cl.DiseaseInfo = _cl.DiseaseInfo;

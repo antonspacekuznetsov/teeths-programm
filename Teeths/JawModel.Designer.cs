@@ -395,6 +395,7 @@
             this.linkLabel29.TabIndex = 52;
             this.linkLabel29.TabStop = true;
             this.linkLabel29.Text = "45";
+            this.linkLabel29.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel29_LinkClicked);
             // 
             // linkLabel28
             // 
@@ -746,13 +747,14 @@
             this.pictureBox1.Size = new System.Drawing.Size(501, 601);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // JawModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(504, 602);
+            this.ClientSize = new System.Drawing.Size(626, 676);
             this.Controls.Add(this.linkLabel52);
             this.Controls.Add(this.linkLabel51);
             this.Controls.Add(this.linkLabel50);
